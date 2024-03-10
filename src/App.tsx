@@ -13,19 +13,23 @@ const App: React.FC = () => {
   const [selectedTheme, setSelectedTheme] = useState<ThemeType | null>(null);
 
   useEffect(() => {
-    const randomThemes = themes.sort(() => 0.5 - Math.random()).slice(0, 3);
-    setSampleThemes(randomThemes);
+    selectSampleThemes();
   }, []);
 
   const handleClick = (theme: ThemeType) => {
     setSelectedTheme(theme);
   };
 
+  const selectSampleThemes = () => {
+    const randomThemes = themes.sort(() => 0.5 - Math.random()).slice(0, 3);
+    setSampleThemes(randomThemes);
+  };
+
   return (
     <div style={{ maxWidth: "600px", margin: "0 auto" }}>
       {selectedTheme ? (
         <div>
-          <h1>{selectedTheme.title}</h1>
+          <h1 className="theme-title">{selectedTheme.title}</h1>
           <p>
             Max: {selectedTheme.max}, Min: {selectedTheme.min}
           </p>
@@ -36,11 +40,12 @@ const App: React.FC = () => {
           <h1>お題</h1>
           <ul>
             {sampleThemes.map((theme, index) => (
-              <li key={index} onClick={() => handleClick(theme)}>
+              <li className="theme-title" key={index} onClick={() => handleClick(theme)}>
                 {theme.title}
               </li>
             ))}
           </ul>
+          <button onClick={selectSampleThemes}>シャッフル</button>
         </div>
       )}
     </div>
