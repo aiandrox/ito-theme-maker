@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import themes from "./themes.json";
 import "./App.css";
 
@@ -12,13 +12,13 @@ const App: React.FC = () => {
   const [sampleThemes, setSampleThemes] = useState<ThemeType[]>([]);
   const [selectedTheme, setSelectedTheme] = useState<ThemeType | null>(null);
 
-  const selectSampleThemes = () => {
+  const selectRandomThemes = () => {
     const randomThemes = [...themes].sort(() => 0.5 - Math.random()).slice(0, 3);
     setSampleThemes(randomThemes);
   };
 
   return (
-    <div style={{ maxWidth: "500px", margin: "0 auto" }}>
+    <div style={{ maxWidth: "500px", margin: "0 auto", padding: "5px" }}>
       {selectedTheme ? (
         <div>
           <h1 className="theme-title">{selectedTheme.title}</h1>
@@ -50,6 +50,7 @@ const App: React.FC = () => {
               <hr />
             </>
           )}
+          <button onClick={selectRandomThemes}>シャッフル</button>
           <ul>
             {themes.map((theme, index) => (
               <li className="theme-box" key={index} onClick={() => setSelectedTheme(theme)}>
@@ -57,7 +58,6 @@ const App: React.FC = () => {
               </li>
             ))}
           </ul>
-          <button onClick={selectSampleThemes}>シャッフル</button>
         </div>
       )}
     </div>
