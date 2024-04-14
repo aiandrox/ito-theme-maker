@@ -34,8 +34,8 @@ const App: React.FC = () => {
             <>
               <ul>
                 {sampleThemes.map((theme, index) => (
-                  <li className="theme-title" key={index} onClick={() => setSelectedTheme(theme)}>
-                    {theme.title}
+                  <li className="theme-box" key={index} onClick={() => setSelectedTheme(theme)}>
+                    <div className="theme-title">{theme.title}</div>
                   </li>
                 ))}
               </ul>
@@ -44,8 +44,8 @@ const App: React.FC = () => {
           )}
           <ul>
             {themes.map((theme, index) => (
-              <li className="theme-title" key={index} onClick={() => setSelectedTheme(theme)}>
-                {theme.title}
+              <li className="theme-box" key={index} onClick={() => setSelectedTheme(theme)}>
+                <div className="theme-title">{theme.title}</div>
               </li>
             ))}
           </ul>
