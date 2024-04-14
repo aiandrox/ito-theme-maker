@@ -1,3 +1,7 @@
+.title {
+  text-align: center;
+}
+
 .theme-title {
   white-space: pre-wrap;
   text-align: center;
@@ -10,11 +14,28 @@
   justify-content: center;
   margin: 10px;
   padding: 10px;
-  border: 2px solid #ff9430;
+  border: 2px solid #ffee00;
   border-radius: 5px;
-  color: #060606;
-  background-color: #fff;
+  color: #ffffff;
   cursor: pointer;
+  font-weight: bold;
+}
+
+.button-wrapper {
+  display: flex;
+  justify-content: right;
+  margin-bottom: 10px;
+}
+
+.button {
+  border: 2px solid #ff425f;
+  align-items: center;
+  padding: 5px 10px;
+  border-radius: 5px;
+  background-color: #ffffff;
+  color: #008dbf;
+  cursor: pointer;
+  font-weight: bold;
 }
 
 .line-wrapper {
@@ -30,12 +51,13 @@
 }
 
 .number-line {
-  border-bottom: dotted 3px #fff;
+  border-bottom: dotted 3px #ffee00;
 }
 
 .number {
   font-size: 12px;
   text-align: center;
+  color: #ffee00;
 }
 
 .label {

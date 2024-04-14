@@ -33,11 +33,20 @@ const App: React.FC = () => {
               <div className="label">{selectedTheme.max}</div>
             </div>
           </div>
-          <button onClick={() => setSelectedTheme(null)}>戻る</button>
+          <div className="button-wrapper">
+            <button className="button" onClick={() => setSelectedTheme(null)}>
+              戻る
+            </button>
+          </div>
         </div>
       ) : (
         <div>
-          <h1>itoお題メーカー</h1>
+          <h1 className="title">itoお題メーカー</h1>
+          <div className="button-wrapper">
+            <button className="button" onClick={selectRandomThemes}>
+              シャッフル
+            </button>
+          </div>
           {sampleThemes.length > 0 && (
             <>
               <ul>
@@ -47,10 +56,9 @@ const App: React.FC = () => {
                   </li>
                 ))}
               </ul>
-              <hr />
+              <div className="number-line" />
             </>
           )}
-          <button onClick={selectRandomThemes}>シャッフル</button>
           <ul>
             {themes.map((theme, index) => (
               <li className="theme-box" key={index} onClick={() => setSelectedTheme(theme)}>
