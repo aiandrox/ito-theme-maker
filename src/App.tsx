@@ -22,9 +22,17 @@ const App: React.FC = () => {
       {selectedTheme ? (
         <div>
           <h1 className="theme-title">{selectedTheme.title}</h1>
-          <p>
-            Max: {selectedTheme.max}, Min: {selectedTheme.min}
-          </p>
+          <div className="line-wrapper">
+            <div className="text-wrapper">
+              <div className="number">1</div>
+              <div className="number">100</div>
+            </div>
+            <div className="number-line" />
+            <div className="text-wrapper">
+              <div className="label">{selectedTheme.min}</div>
+              <div className="label">{selectedTheme.max}</div>
+            </div>
+          </div>
           <button onClick={() => setSelectedTheme(null)}>戻る</button>
         </div>
       ) : (
