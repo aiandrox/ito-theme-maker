@@ -21,7 +21,7 @@ const App: React.FC = () => {
     <div style={{ maxWidth: "500px", margin: "0 auto", padding: "5px" }}>
       {selectedTheme ? (
         <div>
-          <h1 className="theme-title">{selectedTheme.title}</h1>
+          <h2 className="theme-title">{selectedTheme.title}</h2>
           <div className="line-wrapper">
             <div className="text-wrapper">
               <div className="number">1</div>
@@ -37,7 +37,7 @@ const App: React.FC = () => {
         </div>
       ) : (
         <div>
-          <h1>お題</h1>
+          <h1>itoお題メーカー</h1>
           {sampleThemes.length > 0 && (
             <>
               <ul>

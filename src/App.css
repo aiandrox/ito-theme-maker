@@ -1,5 +1,6 @@
 .theme-title {
   white-space: pre-wrap;
+  text-align: center;
 }
 
 .theme-box {
@@ -14,4 +15,30 @@
   color: #060606;
   background-color: #fff;
   cursor: pointer;
+}
+
+.line-wrapper {
+  width: 100%;
+  display: flex;
+  flex-flow: column;
+  margin-bottom: 10px;
+}
+
+.text-wrapper {
+  display: flex;
+  justify-content: space-between;
+}
+
+.number-line {
+  border-bottom: dotted 3px #fff;
+}
+
+.number {
+  font-size: 12px;
+  text-align: center;
+}
+
+.label {
+  font-size: 14px;
+  text-align: center;
 }

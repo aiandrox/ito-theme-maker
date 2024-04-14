@@ -15,29 +15,3 @@ code {
 ul {
   padding-inline-start: 0px;
 }
-
-.line-wrapper {
-  width: 100%;
-  display: flex;
-  flex-flow: column;
-  margin-bottom: 10px;
-}
-
-.text-wrapper {
-  display: flex;
-  justify-content: space-between;
-}
-
-.number-line {
-  border-bottom: dotted 3px #fff;
-}
-
-.number {
-  font-size: 12px;
-  text-align: center;
-}
-
-.label {
-  font-size: 14px;
-  text-align: center;
-}
