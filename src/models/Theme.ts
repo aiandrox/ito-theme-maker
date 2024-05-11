@@ -4,3 +4,5 @@ export type Theme = {
   max: string;
   min: string;
 };
+
+export const PAGE_SIZE = 20;

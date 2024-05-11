@@ -2,7 +2,7 @@ import React from "react";
 import { TopComponent } from "./components/Top/Top.component";
 import { ThemeComponent } from "./components/Theme/Theme.component";
 import { Route, BrowserRouter, Routes } from "react-router-dom";
-import { NotFoundComponent } from "./components/NotFound/NotFound.component";
+import { NotFoundComponent } from "./components/shared/NotFound/NotFound.component";
 
 const App: React.FC = () => {
   return (

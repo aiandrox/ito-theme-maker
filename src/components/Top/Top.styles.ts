@@ -25,3 +25,9 @@ export const Button = styled.button`
 export const NumberLine = styled.div`
   border-bottom: dotted 4px ${color.yellow};
 `;
+
+export const PaginationWrapper = styled.div`
+  display: flex;
+  justify-content: center;
+  margin-top: 16px;
+`;
