@@ -2,13 +2,13 @@ import { Theme } from "../../models";
 import * as Styles from "./ThemeItem.styles";
 
 type Props = {
-  onCLickTheme?: (theme: Theme) => () => void;
+  onClickTheme?: (theme: Theme) => () => void;
   theme: Theme;
 };
 
-export const ThemeItemComponent = ({ onCLickTheme, theme }: Props) => {
+export const ThemeItemComponent = ({ onClickTheme, theme }: Props) => {
   return (
-    <Styles.ThemeBox key={theme.title} onClick={onCLickTheme && onCLickTheme(theme)}>
+    <Styles.ThemeBox key={theme.title} onClick={onClickTheme && onClickTheme(theme)}>
       <Styles.ThemeTitle>{theme.title}</Styles.ThemeTitle>
     </Styles.ThemeBox>
   );

@@ -1,16 +1,23 @@
-import { ComponentProps } from "react";
+import themes from "../../themes.json";
+import { useState } from "react";
 import { Theme } from "../../models";
 import { ThemeItemComponent } from "./ThemeItem.component";
 import * as Styles from "./Top.styles";
+import { useNavigate } from "react-router-dom";
 
-type Props = {
-  selectRandomThemes?: ComponentProps<"button">["onClick"];
-  onCLickTheme?: (theme: Theme) => () => void;
-  sampleThemes: Theme[];
-  themes: Theme[];
-};
+export const TopComponent = () => {
+  const navigate = useNavigate();
+  const [sampleThemes, setSampleThemes] = useState<Theme[]>([]);
 
-export const TopComponent = ({ selectRandomThemes, onCLickTheme, sampleThemes, themes }: Props) => {
+  const selectRandomThemes = () => {
+    const randomThemes = [...themes].sort(() => 0.5 - Math.random()).slice(0, 3);
+    setSampleThemes(randomThemes);
+  };
+
+  const onClickTheme = (theme: Theme) => () => {
+    navigate(`/themes/${theme.title}`);
+  };
+
   return (
     <>
       <Styles.Title>itoお題メーカー</Styles.Title>
@@ -21,7 +28,7 @@ export const TopComponent = ({ selectRandomThemes, onCLickTheme, sampleThemes, t
         <>
           <ul>
             {sampleThemes.map((theme) => (
-              <ThemeItemComponent onCLickTheme={onCLickTheme} theme={theme} />
+              <ThemeItemComponent onClickTheme={onClickTheme} theme={theme} />
             ))}
           </ul>
           <Styles.NumberLine />
@@ -29,7 +36,7 @@ export const TopComponent = ({ selectRandomThemes, onCLickTheme, sampleThemes, t
       )}
       <ul>
         {themes.map((theme) => (
-          <ThemeItemComponent onCLickTheme={onCLickTheme} theme={theme} />
+          <ThemeItemComponent onClickTheme={onClickTheme} theme={theme} />
         ))}
       </ul>
     </>
