@@ -5,10 +5,10 @@ export const ThemeBox = styled.li`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin: 10px;
-  padding: 10px;
+  margin: 12px;
+  padding: 12px;
   border: 2px solid #ffee00;
-  border-radius: 5px;
+  border-radius: 4px;
   color: #ffffff;
   cursor: pointer;
   font-weight: bold;
