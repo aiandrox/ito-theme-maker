@@ -1,5 +1,6 @@
 import { ComponentProps } from "react";
 import { Theme } from "../../models";
+import * as Styles from "./Theme.styles";
 
 type Props = {
   theme: Theme;
@@ -8,24 +9,22 @@ type Props = {
 
 export const ThemeComponent = ({ theme, onClickBack }: Props) => {
   return (
-    <div>
-      <h2 className="theme-title">{theme.title}</h2>
-      <div className="line-wrapper">
-        <div className="text-wrapper">
-          <div className="number">1</div>
-          <div className="number">100</div>
-        </div>
-        <div className="number-line" />
-        <div className="text-wrapper">
-          <div className="label">{theme.min}</div>
-          <div className="label">{theme.max}</div>
-        </div>
-      </div>
-      <div className="button-wrapper">
-        <button className="button" onClick={onClickBack}>
-          戻る
-        </button>
-      </div>
-    </div>
+    <>
+      <Styles.ThemeTitle>{theme.title}</Styles.ThemeTitle>
+      <Styles.LineWrapper>
+        <Styles.TextWrapper>
+          <Styles.Number>1</Styles.Number>
+          <Styles.Number>100</Styles.Number>
+        </Styles.TextWrapper>
+        <Styles.NumberLine />
+        <Styles.TextWrapper>
+          <Styles.Label>{theme.min}</Styles.Label>
+          <Styles.Label>{theme.max}</Styles.Label>
+        </Styles.TextWrapper>
+      </Styles.LineWrapper>
+      <Styles.ButtonWrapper>
+        <Styles.Button onClick={onClickBack}>戻る</Styles.Button>
+      </Styles.ButtonWrapper>
+    </>
   );
 };

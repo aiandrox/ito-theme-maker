@@ -1,4 +1,5 @@
 import { Theme } from "../../models";
+import * as Styles from "./ThemeItem.styles";
 
 type Props = {
   onCLickTheme?: (theme: Theme) => () => void;
@@ -7,8 +8,8 @@ type Props = {
 
 export const ThemeItemComponent = ({ onCLickTheme, theme }: Props) => {
   return (
-    <li className="theme-box" key={theme.title} onClick={onCLickTheme && onCLickTheme(theme)}>
-      <div className="theme-title">{theme.title}</div>
-    </li>
+    <Styles.ThemeBox key={theme.title} onClick={onCLickTheme && onCLickTheme(theme)}>
+      <Styles.ThemeTitle>{theme.title}</Styles.ThemeTitle>
+    </Styles.ThemeBox>
   );
 };

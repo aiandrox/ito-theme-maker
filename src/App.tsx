@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import themes from "./themes.json";
-import "./App.css";
 import { Theme } from "./models";
 import { TopComponent } from "./components/Top/Top.component";
 import { ThemeComponent } from "./components/Theme/Theme.component";

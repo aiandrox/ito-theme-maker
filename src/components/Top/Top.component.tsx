@@ -1,6 +1,7 @@
 import { ComponentProps } from "react";
 import { Theme } from "../../models";
 import { ThemeItemComponent } from "./ThemeItem.component";
+import * as Styles from "./Top.styles";
 
 type Props = {
   selectRandomThemes?: ComponentProps<"button">["onClick"];
@@ -11,13 +12,11 @@ type Props = {
 
 export const TopComponent = ({ selectRandomThemes, onCLickTheme, sampleThemes, themes }: Props) => {
   return (
-    <div>
-      <h1 className="title">itoお題メーカー</h1>
-      <div className="button-wrapper">
-        <button className="button" onClick={selectRandomThemes}>
-          シャッフル
-        </button>
-      </div>
+    <>
+      <Styles.Title>itoお題メーカー</Styles.Title>
+      <Styles.ButtonWrapper>
+        <Styles.Button onClick={selectRandomThemes}>シャッフル</Styles.Button>
+      </Styles.ButtonWrapper>
       {sampleThemes.length > 0 && (
         <>
           <ul>
@@ -25,7 +24,7 @@ export const TopComponent = ({ selectRandomThemes, onCLickTheme, sampleThemes, t
               <ThemeItemComponent onCLickTheme={onCLickTheme} theme={theme} />
             ))}
           </ul>
-          <div className="number-line" />
+          <Styles.NumberLine />
         </>
       )}
       <ul>
@@ -33,6 +32,6 @@ export const TopComponent = ({ selectRandomThemes, onCLickTheme, sampleThemes, t
           <ThemeItemComponent onCLickTheme={onCLickTheme} theme={theme} />
         ))}
       </ul>
-    </div>
+    </>
   );
 };
