@@ -4,6 +4,7 @@ import { Theme, PAGE_SIZE } from "../../models";
 import { ThemeItemComponent } from "./ThemeItem.component";
 import * as Styles from "./Top.styles";
 import { useNavigate, useLocation, Link } from "react-router-dom";
+import { Pagination } from "../shared/Pagination/Pagination.component";
 
 export const TopComponent = () => {
   const navigate = useNavigate();
@@ -35,6 +36,11 @@ export const TopComponent = () => {
     navigate(`/themes/${theme.id}`);
   };
 
+  const onChangePage = (page: number) => () => {
+    // NOTE: 下のqueryを無視している
+    navigate(`?page=${page}`);
+  };
+
   return (
     <>
       <Styles.Title>itoお題メーカー</Styles.Title>
@@ -56,13 +62,9 @@ export const TopComponent = () => {
           <ThemeItemComponent key={theme.id} onClickTheme={onClickTheme} theme={theme} />
         ))}
       </ul>
-      <ul>
-        {Array.from({ length: Math.ceil(themes.length / PAGE_SIZE) }, (_, i) => i + 1).map((num) => (
-          <Link key={num} to={`?page=${num}`}>
-            {num}
-          </Link>
-        ))}
-      </ul>
+      <Styles.PaginationWrapper>
+        <Pagination totalPage={Math.ceil(themes.length / PAGE_SIZE)} currentPage={page} onChangePage={onChangePage} />
+      </Styles.PaginationWrapper>
     </>
   );
 };
