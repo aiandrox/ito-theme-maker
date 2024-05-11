@@ -1,7 +1,7 @@
 import themes from "../../themes.json";
 import { Theme } from "../../models";
 import * as Styles from "./Theme.styles";
-import { NotFoundComponent } from "../NotFound/NotFound.component";
+import { NotFoundComponent } from "../shared/NotFound/NotFound.component";
 import { useParams, useNavigate } from "react-router-dom";
 
 export const ThemeComponent = () => {
