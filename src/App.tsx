@@ -9,7 +9,7 @@ const App: React.FC = () => {
     <div style={{ maxWidth: "500px", margin: "0 auto", padding: "5px" }}>
       <BrowserRouter>
         <Routes>
-          <Route path="/themes/:themeTitle" element={<ThemeComponent />} />
+          <Route path="/themes/:id" element={<ThemeComponent />} />
           <Route path="/" element={<TopComponent />} />
           <Route path="*" element={<NotFoundComponent />} />
         </Routes>

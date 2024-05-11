@@ -15,7 +15,7 @@ export const TopComponent = () => {
   };
 
   const onClickTheme = (theme: Theme) => () => {
-    navigate(`/themes/${theme.title}`);
+    navigate(`/themes/${theme.id}`);
   };
 
   return (

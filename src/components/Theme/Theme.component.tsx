@@ -6,9 +6,9 @@ import { useParams, useNavigate } from "react-router-dom";
 
 export const ThemeComponent = () => {
   const navigate = useNavigate();
-  const { themeTitle } = useParams();
+  const { id } = useParams();
 
-  const theme: Theme | undefined = themes.find((theme) => theme.title === themeTitle);
+  const theme: Theme | undefined = themes.find((theme) => theme.id === Number(id));
   const onClickBack = () => {
     navigate("/");
   };
