@@ -1,5 +1,6 @@
 import { ComponentProps } from "react";
 import { Theme } from "../../models";
+import { ThemeItemComponent } from "./ThemeItem.component";
 
 type Props = {
   selectRandomThemes?: ComponentProps<"button">["onClick"];
@@ -20,20 +21,16 @@ export const TopComponent = ({ selectRandomThemes, onCLickTheme, sampleThemes, t
       {sampleThemes.length > 0 && (
         <>
           <ul>
-            {sampleThemes.map((theme, index) => (
-              <li className="theme-box" key={index} onClick={onCLickTheme && onCLickTheme(theme)}>
-                <div className="theme-title">{theme.title}</div>
-              </li>
+            {sampleThemes.map((theme) => (
+              <ThemeItemComponent onCLickTheme={onCLickTheme} theme={theme} />
             ))}
           </ul>
           <div className="number-line" />
         </>
       )}
       <ul>
-        {themes.map((theme, index) => (
-          <li className="theme-box" key={index} onClick={onCLickTheme && onCLickTheme(theme)}>
-            <div className="theme-title">{theme.title}</div>
-          </li>
+        {themes.map((theme) => (
+          <ThemeItemComponent onCLickTheme={onCLickTheme} theme={theme} />
         ))}
       </ul>
     </div>
