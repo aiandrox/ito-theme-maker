@@ -1,6 +1,13 @@
 import styled from "@emotion/styled";
 import { color } from "../../color";
 
+// App のラッパー(padding: 5px)を差し引いて画面いっぱいに広げる
+export const Container = styled.div`
+  min-height: calc(100dvh - 10px);
+  display: flex;
+  flex-direction: column;
+`;
+
 export const ThemeTitle = styled.h2`
   white-space: pre-wrap;
   text-align: center;
@@ -8,9 +15,11 @@ export const ThemeTitle = styled.h2`
 
 export const LineWrapper = styled.div`
   width: 100%;
+  flex: 1;
   display: flex;
   flex-flow: column;
-  margin-bottom: 20px;
+  justify-content: center;
+  gap: 8px;
 `;
 
 export const ThemeBox = styled.button`
@@ -30,7 +39,7 @@ export const TextWrapper = styled.div`
 `;
 
 export const NumberLine = styled.div`
-  border-bottom: dotted 2px ${color.yellow};
+  border-bottom: dotted 4px ${color.yellow};
 `;
 
 export const Number = styled.div`
@@ -47,6 +56,7 @@ export const Label = styled.div`
 export const ButtonWrapper = styled.div`
   display: flex;
   justify-content: right;
+  margin-top: 12px;
   margin-bottom: 12px;
 `;
 

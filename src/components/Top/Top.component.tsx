@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import { Theme, PAGE_SIZE } from "../../models";
 import { ThemeItemComponent } from "./ThemeItem.component";
 import * as Styles from "./Top.styles";
-import { useNavigate, useLocation, Link } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import { Pagination } from "../shared/Pagination/Pagination.component";
 
 export const TopComponent = () => {
@@ -33,7 +33,8 @@ export const TopComponent = () => {
   };
 
   const onClickTheme = (theme: Theme) => () => {
-    navigate(`/themes/${theme.id}`);
+    // 詳細画面から戻ったときに同じページを表示できるよう、現在のページを引き継ぐ
+    navigate(`/themes/${theme.id}?page=${page}`);
   };
 
   const onChangePage = (page: number) => () => {
@@ -51,7 +52,7 @@ export const TopComponent = () => {
         <>
           <ul>
             {sampleThemes.map((theme) => (
-              <ThemeItemComponent onClickTheme={onClickTheme} theme={theme} />
+              <ThemeItemComponent key={theme.id} onClickTheme={onClickTheme} theme={theme} />
             ))}
           </ul>
           <Styles.NumberLine />

@@ -4,8 +4,16 @@ import { css } from "@emotion/react";
 
 export const Ol = styled.ol`
   display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
   gap: 8px;
+  margin: 0;
   padding-inline-start: 0;
+
+  @media (max-width: 420px) {
+    gap: 6px;
+  }
 `;
 
 const PaginationButton = ({ disabled }: { disabled?: boolean }) => css`
@@ -22,30 +30,34 @@ const PaginationButton = ({ disabled }: { disabled?: boolean }) => css`
       `}
 `;
 
-export const Li = styled.li`
-  ${PaginationButton}
-
+const cell = css`
   width: 35px;
   height: 35px;
-  border-radius: 4px;
-
-  font-size: 13px;
   display: flex;
   align-items: center;
   justify-content: center;
+  flex: none;
+
+  @media (max-width: 420px) {
+    width: 30px;
+    height: 30px;
+  }
+`;
+
+export const Li = styled.li`
+  ${PaginationButton}
+  ${cell}
+
+  border-radius: 4px;
+  font-size: 13px;
 `;
 
 export const EllipsisLi = styled.li`
-  width: 35px;
-  height: 35px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  ${cell}
+
+  color: ${color.white};
+
   ::before {
-    display: flex;
-    justify-content: center;
     content: "…";
-    width: 20px;
-    height: 20px;
   }
 `;
